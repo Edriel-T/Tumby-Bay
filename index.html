@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Tumby Bay Interchurch Council Inc – supporting local Christian churches and pastoral wellbeing in schools since 1969." />
-  <title>Tumby Bay Interchurch Council | Supporting our community</title>
+  <title>Tumby Bay Interchurch Council | Community & Faith</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <style>
     /* ── Root ── */
@@ -361,7 +361,7 @@
       font-weight: 500;
     }
 
-    /* ── Voice panels ── */
+    /* ── Voice panels (Mission/Vision) ── */
     .voice {
       background:
         linear-gradient(90deg, transparent 0, transparent calc(50% - 0.5px), var(--line) calc(50% - 0.5px), var(--line) calc(50% + 0.5px), transparent calc(50% + 0.5px)),
@@ -399,6 +399,63 @@
     }
     .panel-accent h3 {
       color: #fff;
+    }
+
+    /* ── ElevenLabs / Tech Section (Aligned) ── */
+    .tech-block {
+      background: var(--paper-2);
+      border-top: 4px solid var(--ember);
+    }
+    .tech-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+    .tech-card {
+      background: #fffdf8;
+      border: 1px solid var(--line);
+      padding: 1.5rem 1.8rem;
+      box-shadow: 6px 6px 0 var(--ink);
+    }
+    .tech-card .label {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--mute);
+      margin-bottom: 0.25rem;
+    }
+    .tech-card .big-number {
+      font-family: var(--mono);
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--ember);
+      line-height: 1;
+      margin-top: 0.2rem;
+    }
+    .tech-card p {
+      font-size: 0.95rem;
+      color: var(--ink-2);
+      margin-top: 0.5rem;
+    }
+    .tech-uses {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      margin: 1rem 0;
+    }
+    .tech-uses li {
+      display: flex;
+      gap: 0.6rem;
+      align-items: flex-start;
+      font-size: 0.95rem;
+      color: var(--ink-2);
+    }
+    .tech-uses li i {
+      color: var(--ember);
+      margin-top: 0.2rem;
+      width: 1.1rem;
     }
 
     /* ── Details grid ── */
@@ -657,7 +714,8 @@
       .intro-grid,
       .story-grid,
       .people-grid,
-      .reach-grid {
+      .reach-grid,
+      .tech-grid {
         grid-template-columns: 1fr;
       }
       .intro h1 {
@@ -760,6 +818,7 @@
         <a href="#story">Our story</a>
         <a href="#mission">Mission &amp; vision</a>
         <a href="#programs">What we do</a>
+        <a href="#tech">Tech &amp; inclusion</a>
         <a href="#people">Who we serve</a>
         <a href="#reach">Reach us</a>
       </nav>
@@ -960,6 +1019,58 @@
       </div>
     </section>
 
+    <!-- ─── NEW: ELEVENLABS / TECHNOLOGY & INCLUSION (ALIGNED) ─── -->
+    <section id="tech" class="block tech-block">
+      <div class="wrap">
+        <header class="block-head">
+          <h2>Embracing technology for inclusion</h2>
+          <p>How we're using voice AI to reach further and care deeper.</p>
+        </header>
+
+        <div class="tech-grid">
+          <div>
+            <p style="font-size:1.05rem; color:var(--ink-2); margin-bottom:1rem;">
+              In our rural community, many elderly members struggle with vision loss, 
+              and some children have reading difficulties. We believe that 
+              <strong>access to spiritual care and community news should not depend 
+              on being able to read small print</strong>.
+            </p>
+            <p style="color:var(--ink-2); margin-bottom:1rem;">
+              That's why we're partnering with <strong>ElevenLabs</strong> to use lifelike 
+              Text-to-Speech technology. We are creating warm, clear audio versions of 
+              our pastoral resources, school chaplaincy materials, and weekly service 
+              announcements.
+            </p>
+
+            <ul class="tech-uses">
+              <li><i class="fas fa-ear-listen"></i> <span><strong>For our elderly:</strong> Audio Bibles, prayer books, and service bulletins delivered via WhatsApp for members with sight loss.</span></li>
+              <li><i class="fas fa-school"></i> <span><strong>For our schools:</strong> Engaging audio versions of wellbeing lessons for kids who struggle with reading or attention.</span></li>
+              <li><i class="fas fa-house-chimney"></i> <span><strong>For the housebound:</strong> Weekly community updates and recorded sermons shared via local radio and phone trees.</span></li>
+            </ul>
+          </div>
+
+          <div class="tech-card">
+            <p class="label">Our commitment</p>
+            <div class="big-number">✧</div>
+            <p style="font-weight:600; color:var(--ink);">Every voice matters.</p>
+            <p>
+              We are open to sharing our journey with ElevenLabs through a case study. 
+              We believe in measuring real impact—engagement rates, listening time, 
+              and feedback from our community.
+            </p>
+            <div style="margin-top:1.2rem; padding-top:1rem; border-top:1px solid var(--line);">
+              <span class="chip" style="background:var(--ember); color:#fff; border:1px solid var(--ember-deep);">
+                <i class="fas fa-microphone"></i> Powered by ElevenLabs
+              </span>
+              <span class="chip" style="margin-left:0.3rem;">
+                <i class="fas fa-flag"></i> Case study ready
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ─── WHO WE SERVE ─── -->
     <section id="people" class="block people">
       <div class="wrap people-grid">
@@ -989,8 +1100,8 @@
             <span>Teachers, staff, and students who benefit from chaplaincy presence</span>
           </li>
           <li>
-            <strong>Rural and regional communities</strong>
-            <span>People in remote areas who often miss out on support services</span>
+            <strong>Elderly and housebound members</strong>
+            <span>Seniors who need accessible audio content to stay connected</span>
           </li>
           <li>
             <strong>Anyone who needs a listening ear</strong>
@@ -1060,7 +1171,7 @@
           <span class="chip"><i class="fas fa-tree"></i> Rural/regional/remote</span>
         </div>
 
-        <div style="margin-top:1rem; background:var(--paper-2); padding:0.6rem 1.2rem; border-radius:0; border-left:4px solid var(--ember); font-size:0.95rem; color:var(--ink-2);">
+        <div style="margin-top:1rem; background:var(--paper-2); padding:0.6rem 1.2rem; border-left:4px solid var(--ember); font-size:0.95rem; color:var(--ink-2);">
           <i class="fas fa-bullhorn" style="color:var(--ember); margin-right:0.4rem;"></i>
           We promote local Christian churches in our district and support PSW in local schools.
         </div>
@@ -1087,6 +1198,7 @@
             <li>Support for local schools and families</li>
             <li>Partnerships with churches and community groups</li>
             <li>Pastoral care and spiritual support</li>
+            <li>Inquiries about our voice technology program</li>
           </ul>
         </div>
 
@@ -1115,7 +1227,7 @@
         <p class="footer-tag">
           Promoting local Christian churches and supporting pastoral wellbeing in schools since 1969.
         </p>
-        <p class="footer-tag">Faith · Community · Care</p>
+        <p class="footer-tag">Faith · Community · Care · <i class="fas fa-microphone" style="color:#e07a52;"></i> Voice accessible</p>
       </div>
       <p class="footer-copy">
         &copy; <span id="year"></span> Tumby Bay Interchurch Council Inc · ABN 31 268 421 172
