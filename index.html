@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Tumby Bay Interchurch Council Inc – supporting local Christian churches and pastoral wellbeing in schools since 1969." />
+  <title>Tumby Bay Interchurch Council | Supporting our community</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    /* ── Root ── */
+    :root {
+      --ink: #2c241f;
+      --ink-2: #4a3a32;
+      --paper: #f7f0e7;
+      --paper-2: #ede3d7;
+      --line: #d4c5b8;
+      --mute: #7a6b5f;
+      --ember: #b55a3e;
+      --ember-deep: #8f432d;
+      --moss: #3d5a4b;
+      --moss-soft: #dce6de;
+      --max: 1080px;
+      --wide: 1200px;
+      --font: "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
+      --mono: "Cascadia Mono", "Segoe UI Mono", ui-monospace, Consolas, monospace;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font);
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.55;
+      font-size: 1.05rem;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.04;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    a {
+      color: inherit;
+    }
+    ul,
+    ol {
+      list-style: none;
+    }
+
+    .wrap {
+      width: min(100% - 2rem, var(--max));
+      margin-inline: auto;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: 1rem;
+      top: -3rem;
+      background: var(--ink);
+      color: var(--paper);
+      padding: 0.5rem 0.85rem;
+      z-index: 10000;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    .skip-link:focus {
+      top: 0.75rem;
+    }
+
+    /* ── Top strip ── */
+    .top-strip {
+      background: var(--ink);
+      color: #d9cfc0;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 0.45rem 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+    }
+    .top-strip .dot {
+      opacity: 0.45;
+    }
+
+    /* ── Header ── */
+    .site-header {
+      border-bottom: 1px solid var(--line);
+      background: rgba(247, 240, 231, 0.92);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(8px);
+    }
+
+    .header-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      min-height: 3.75rem;
+      width: min(100% - 2rem, var(--wide));
+    }
+
+    .brand {
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 1.2rem;
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+    .brand-word {
+      color: var(--ink);
+    }
+    .brand-ph {
+      color: var(--ember);
+      margin-left: 0.05em;
+      font-weight: 600;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.15rem 1.35rem;
+      justify-content: flex-end;
+    }
+    .nav a {
+      text-decoration: none;
+      font-size: 0.92rem;
+      color: var(--ink-2);
+      border-bottom: 1px solid transparent;
+      padding-bottom: 0.1rem;
+    }
+    .nav a:hover,
+    .nav a:focus-visible {
+      border-bottom-color: var(--ember);
+      color: var(--ember-deep);
+      outline: none;
+    }
+
+    .menu-btn {
+      display: none;
+      border: 1px solid var(--ink);
+      background: transparent;
+      color: var(--ink);
+      font: inherit;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.4rem 0.75rem;
+      cursor: pointer;
+    }
+    .menu-btn:hover,
+    .menu-btn:focus-visible {
+      background: var(--ink);
+      color: var(--paper);
+      outline: none;
+    }
+
+    /* ── Intro ── */
+    .intro {
+      padding: clamp(2.5rem, 7vw, 4.5rem) 0 clamp(2rem, 5vw, 3.5rem);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1.35fr 0.85fr;
+      gap: clamp(1.5rem, 4vw, 3rem);
+      align-items: start;
+    }
+
+    .kicker {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--mute);
+      margin-bottom: 1rem;
+    }
+
+    .intro h1 {
+      font-size: clamp(1.85rem, 4.6vw, 3.05rem);
+      line-height: 1.12;
+      letter-spacing: -0.035em;
+      font-weight: 750;
+      margin-bottom: 1.25rem;
+      max-width: 16ch;
+    }
+
+    .lede {
+      font-size: 1.08rem;
+      color: var(--ink-2);
+      max-width: 38rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .lede-tagline {
+      margin: 0 0 1.5rem;
+      font-style: italic;
+      color: var(--moss, #2f4a3c);
+      font-size: 0.98rem;
+    }
+
+    .intro-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      font-weight: 650;
+      font-size: 0.95rem;
+      padding: 0.7rem 1.15rem;
+      border: 1.5px solid var(--ink);
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+    .btn.solid {
+      background: var(--ink);
+      color: var(--paper);
+    }
+    .btn.solid:hover,
+    .btn.solid:focus-visible {
+      background: var(--ember);
+      border-color: var(--ember);
+      outline: none;
+    }
+    .btn.line {
+      background: transparent;
+      color: var(--ink);
+    }
+    .btn.line:hover,
+    .btn.line:focus-visible {
+      background: var(--paper-2);
+      outline: none;
+    }
+
+    .intro-note {
+      border: 1px solid var(--ink);
+      background: var(--paper-2);
+      padding: 1.25rem 1.2rem 1.35rem;
+      box-shadow: 6px 6px 0 var(--ink);
+    }
+    .note-label {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.85rem;
+      color: var(--mute);
+    }
+    .intro-note ul {
+      display: grid;
+      gap: 0.45rem;
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px dashed var(--line);
+    }
+    .intro-note li {
+      font-size: 0.95rem;
+      padding-left: 1rem;
+      position: relative;
+    }
+    .intro-note li::before {
+      content: "–";
+      position: absolute;
+      left: 0;
+      color: var(--ember);
+      font-weight: 700;
+    }
+    .note-foot {
+      font-size: 0.92rem;
+      color: var(--ink-2);
+    }
+    .note-foot strong {
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    /* ── Strip band ── */
+    .strip-band {
+      background: var(--moss);
+      color: #e8f0ea;
+      padding: 1rem 0;
+    }
+    .band-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem 1.5rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      width: min(100% - 2rem, var(--wide));
+    }
+
+    /* ── Blocks ── */
+    .block {
+      padding: clamp(2.75rem, 6vw, 4.25rem) 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .block h2 {
+      font-size: clamp(1.55rem, 3vw, 2.1rem);
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 0.75rem;
+    }
+    .block-head {
+      max-width: 40rem;
+      margin-bottom: 2rem;
+    }
+    .block-head.narrow {
+      max-width: 32rem;
+    }
+    .block-head p,
+    .people-intro p {
+      color: var(--ink-2);
+    }
+
+    /* ── Story ── */
+    .story-grid {
+      display: grid;
+      grid-template-columns: 0.7fr 1.3fr;
+      gap: 2rem;
+    }
+    .side-meta {
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      color: var(--mute);
+      margin-top: 0.35rem;
+    }
+    .story-body {
+      display: grid;
+      gap: 1rem;
+      font-size: 1.05rem;
+      color: var(--ink-2);
+      max-width: 40rem;
+    }
+    .story-body p:first-child {
+      font-size: 1.15rem;
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    /* ── Voice panels ── */
+    .voice {
+      background:
+        linear-gradient(90deg, transparent 0, transparent calc(50% - 0.5px), var(--line) calc(50% - 0.5px), var(--line) calc(50% + 0.5px), transparent calc(50% + 0.5px)),
+        var(--paper);
+    }
+    .voice-panels {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border: 1px solid var(--ink);
+    }
+    .panel {
+      padding: 1.4rem 1.25rem 1.6rem;
+      border-right: 1px solid var(--ink);
+      background: var(--paper);
+    }
+    .panel:last-child {
+      border-right: none;
+    }
+    .panel h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.65rem;
+      letter-spacing: -0.02em;
+    }
+    .panel p {
+      font-size: 0.95rem;
+      color: var(--ink-2);
+    }
+    .panel-accent {
+      background: var(--ink);
+      color: var(--paper);
+    }
+    .panel-accent p {
+      color: #d9cfc0;
+    }
+    .panel-accent h3 {
+      color: #fff;
+    }
+
+    /* ── Details grid ── */
+    .details-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.4rem 1.5rem;
+      background: var(--paper-2);
+      padding: 1.2rem 1.5rem;
+      border-radius: 0;
+      border: 1px solid var(--line);
+      margin: 0.5rem 0 1.2rem;
+    }
+    .detail-item {
+      display: flex;
+      border-bottom: 1px dashed var(--line);
+      padding: 0.4rem 0;
+    }
+    .detail-item .label {
+      font-weight: 500;
+      color: var(--mute);
+      width: 120px;
+      flex-shrink: 0;
+      font-size: 0.9rem;
+    }
+    .detail-item .value {
+      font-weight: 500;
+      color: var(--ink);
+      font-size: 0.9rem;
+    }
+    .detail-item .value a {
+      color: var(--ember);
+      text-decoration: none;
+      border-bottom: 1px dotted #dbb8ab;
+    }
+    .detail-item .value a:hover {
+      border-bottom: 2px solid var(--ember);
+    }
+    .detail-item:last-child {
+      border-bottom: none;
+    }
+
+    .chip-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+      margin-top: 0.3rem;
+    }
+    .chip {
+      background: var(--line);
+      padding: 0.1rem 0.9rem;
+      border-radius: 30px;
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: var(--ink-2);
+      letter-spacing: 0.2px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.2rem;
+    }
+    .chip i {
+      color: var(--mute);
+    }
+
+    /* ── Work list ── */
+    .work-list {
+      display: grid;
+      gap: 0;
+      border-top: 1px solid var(--ink);
+    }
+    .work-list li {
+      display: grid;
+      grid-template-columns: 4rem 1fr;
+      gap: 1rem;
+      padding: 1.35rem 0;
+      border-bottom: 1px solid var(--line);
+      align-items: start;
+    }
+    .work-num {
+      font-family: var(--mono);
+      font-size: 0.85rem;
+      color: var(--ember);
+      font-weight: 600;
+      padding-top: 0.2rem;
+    }
+    .work-list h3 {
+      font-size: 1.15rem;
+      margin-bottom: 0.35rem;
+      letter-spacing: -0.02em;
+    }
+    .work-list p {
+      color: var(--ink-2);
+      max-width: 42rem;
+    }
+
+    /* ── People ── */
+    .people {
+      background: var(--paper-2);
+    }
+    .people-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: clamp(1.5rem, 4vw, 2.75rem);
+      align-items: start;
+    }
+    .people-intro h2 {
+      max-width: 12ch;
+    }
+    .people-list {
+      border-top: 1px solid var(--ink);
+    }
+    .people-list li {
+      display: grid;
+      gap: 0.2rem;
+      padding: 0.95rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .people-list strong {
+      font-size: 1rem;
+    }
+    .people-list span {
+      font-size: 0.92rem;
+      color: var(--mute);
+    }
+
+    /* ── Quote ── */
+    .quote-block {
+      padding: clamp(2.5rem, 6vw, 3.75rem) 0;
+      background: var(--ember);
+      color: #fff8f3;
+      border-bottom: 1px solid var(--ember-deep);
+    }
+    .quote-block blockquote p {
+      font-size: clamp(1.35rem, 3vw, 1.85rem);
+      line-height: 1.35;
+      letter-spacing: -0.02em;
+      font-weight: 600;
+      max-width: 22ch;
+    }
+    .quote-attr {
+      margin-top: 1.25rem;
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      opacity: 0.85;
+    }
+
+    /* ── Reach ── */
+    .reach-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: clamp(1.5rem, 4vw, 2.5rem);
+      align-items: start;
+    }
+    .reach-points {
+      margin-top: 1.25rem;
+      display: grid;
+      gap: 0.45rem;
+    }
+    .reach-points li {
+      font-size: 0.95rem;
+      padding-left: 1.1rem;
+      position: relative;
+      color: var(--ink-2);
+    }
+    .reach-points li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--ember);
+      font-weight: 700;
+    }
+
+    .reach-card {
+      border: 1px solid var(--ink);
+      padding: 1.5rem 1.35rem;
+      background: #fffdf8;
+    }
+    .reach-label {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--mute);
+      margin-bottom: 0.25rem;
+    }
+    .reach-label+.reach-label,
+    .reach-link+.reach-label {
+      margin-top: 1.15rem;
+    }
+    .reach-link {
+      display: inline-block;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 2px solid var(--ember);
+      line-height: 1.3;
+    }
+    .reach-link:hover,
+    .reach-link:focus-visible {
+      color: var(--ember-deep);
+      outline: none;
+    }
+    .reach-link.email {
+      font-size: 1.15rem;
+      word-break: break-word;
+    }
+    .reach-hint {
+      margin-top: 1.35rem;
+      font-size: 0.9rem;
+      color: var(--mute);
+      border-top: 1px dashed var(--line);
+      padding-top: 1rem;
+    }
+
+    /* ── Footer ── */
+    .site-footer {
+      background: var(--ink);
+      color: #cfc4b4;
+      padding: 2rem 0 2.25rem;
+    }
+    .footer-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1.25rem;
+      align-items: flex-end;
+      width: min(100% - 2rem, var(--wide));
+    }
+    .footer-brand {
+      font-weight: 800;
+      font-size: 1.15rem;
+      color: #f3ecdf;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.35rem;
+    }
+    .footer-brand span {
+      color: #e07a52;
+    }
+    .footer-tag {
+      font-size: 0.9rem;
+      max-width: 28rem;
+      line-height: 1.45;
+    }
+    .footer-copy {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 880px) {
+      .intro-grid,
+      .story-grid,
+      .people-grid,
+      .reach-grid {
+        grid-template-columns: 1fr;
+      }
+      .intro h1 {
+        max-width: none;
+      }
+      .voice {
+        background: var(--paper);
+      }
+      .voice-panels {
+        grid-template-columns: 1fr;
+      }
+      .panel {
+        border-right: none;
+        border-bottom: 1px solid var(--ink);
+      }
+      .panel:last-child {
+        border-bottom: none;
+      }
+      .people-intro h2 {
+        max-width: none;
+      }
+      .details-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .menu-btn {
+        display: inline-flex;
+      }
+      .nav {
+        display: none;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 100%;
+        flex-direction: column;
+        gap: 0;
+        background: var(--paper);
+        border-bottom: 1px solid var(--ink);
+        padding: 0.5rem 1rem 1rem;
+      }
+      .nav.is-open {
+        display: flex;
+      }
+      .nav a {
+        padding: 0.75rem 0.25rem;
+        border-bottom: 1px solid var(--line);
+      }
+      .site-header {
+        position: relative;
+      }
+      .work-list li {
+        grid-template-columns: 2.5rem 1fr;
+        gap: 0.65rem;
+      }
+      .intro-note {
+        box-shadow: 4px 4px 0 var(--ink);
+      }
+      .band-row {
+        flex-direction: column;
+        gap: 0.25rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--ember);
+      outline-offset: 3px;
+    }
+    a:focus:not(:focus-visible) {
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ─── TOP STRIP ─── -->
+  <div class="top-strip" aria-hidden="true">
+    <span>tumby-bay.tuklasph.com</span>
+    <span class="dot">·</span>
+    <span>Tumby Bay Interchurch Council · Supporting our community since 1969</span>
+  </div>
+
+  <!-- ─── HEADER ─── -->
+  <header class="site-header">
+    <div class="wrap header-row">
+      <a class="brand" href="#top" id="top">
+        <span class="brand-word">Tumby Bay</span><span class="brand-ph"> Interchurch</span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Primary">
+        <a href="#story">Our story</a>
+        <a href="#mission">Mission &amp; vision</a>
+        <a href="#programs">What we do</a>
+        <a href="#people">Who we serve</a>
+        <a href="#reach">Reach us</a>
+      </nav>
+
+      <button class="menu-btn" type="button" aria-controls="nav" aria-expanded="false" aria-label="Menu">
+        Menu
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ─── INTRO ─── -->
+    <section class="intro">
+      <div class="wrap intro-grid">
+        <div class="intro-copy">
+          <p class="kicker">Tumby Bay Interchurch Council Inc · Since 1969</p>
+          <h1>
+            Supporting local churches<br />
+            and pastoral wellbeing<br />
+            in our schools.
+          </h1>
+          <p class="lede">
+            We're a small group of Christian churches in Tumby Bay, South Australia,
+            working together to support the spiritual and emotional wellbeing of
+            our community—especially our kids in local schools.
+          </p>
+          <p class="lede-tagline">Faith, community, and care for every person.</p>
+          <div class="intro-actions">
+            <a class="btn solid" href="#reach">Get in touch</a>
+            <a class="btn line" href="#programs">See our work</a>
+          </div>
+        </div>
+
+        <aside class="intro-note" aria-label="At a glance">
+          <p class="note-label">At a glance</p>
+          <ul>
+            <li>Registered charity · small</li>
+            <li>Founded 31 December 1969</li>
+            <li>ABN 31 268 421 172</li>
+            <li>Supporting children 6–15 in rural SA</li>
+            <li>Christian chaplaincy in local schools</li>
+          </ul>
+          <p class="note-foot">
+            <strong>Promoting local churches and supporting PSW</strong>
+            — pastoral &amp; spiritual wellbeing for our kids.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ─── STRIP BAND ─── -->
+    <section class="strip-band" aria-label="Focus">
+      <div class="wrap band-row">
+        <p>🏛️ A registered charity.</p>
+        <p>⛪ Supporting Christian churches.</p>
+        <p>🧒 Focused on kids and families.</p>
+        <p>🤝 Built on community and care.</p>
+      </div>
+    </section>
+
+    <!-- ─── OUR STORY ─── -->
+    <section id="story" class="block story">
+      <div class="wrap story-grid">
+        <div class="story-side">
+          <h2>Why we exist</h2>
+          <p class="side-meta">Tumby Bay Interchurch Council Inc · Est. 1969</p>
+        </div>
+        <div class="story-body">
+          <p>
+            We started as a simple idea: local churches working together
+            instead of apart. Over 55 years, we've grown into a trusted
+            presence in our district—supporting families, helping kids,
+            and keeping our community connected.
+          </p>
+          <p>
+            Today, we're best known for our chaplaincy work in local schools.
+            We believe every child deserves to feel seen, heard, and cared for—
+            whether they're in the classroom, on the playground, or at home.
+          </p>
+          <p>
+            Our work is grounded in Christian faith, but our doors are open
+            to everyone. We're here to listen, to help, and to walk alongside
+            our community—one conversation at a time.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── MISSION & VISION ─── -->
+    <section id="mission" class="block voice">
+      <div class="wrap">
+        <header class="block-head">
+          <h2>Our mission &amp; vision</h2>
+          <p>What drives us, and where we're headed.</p>
+        </header>
+
+        <div class="voice-panels">
+          <article class="panel">
+            <h3>Mission</h3>
+            <p>
+              To promote local Christian churches in our district and support
+              Pastoral &amp; Spiritual Wellbeing (PSW) in local schools—
+              fostering faith, community, and resilience.
+            </p>
+          </article>
+          <article class="panel">
+            <h3>Vision</h3>
+            <p>
+              A connected, compassionate Tumby Bay where every child and family
+              experiences belonging, spiritual care, and the love of Christ
+              through church and school chaplaincy.
+            </p>
+          </article>
+          <article class="panel panel-accent">
+            <h3>Our heart</h3>
+            <p>
+              We believe community is built on small acts of kindness.
+              A listening ear. A warm meal. A prayer. A hand to hold.
+              That's what we're here for.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── WHAT WE DO ─── -->
+    <section id="programs" class="block work">
+      <div class="wrap">
+        <header class="block-head narrow">
+          <h2>What we do</h2>
+          <p>Practical support for our community, rooted in faith and care.</p>
+        </header>
+
+        <ol class="work-list">
+          <li>
+            <span class="work-num">01</span>
+            <div>
+              <h3>School chaplaincy support</h3>
+              <p>
+                We fund and support chaplains in local schools who are there
+                for kids—listening, helping, and walking alongside them through
+                the ups and downs of school life.
+              </p>
+              <div class="chip-group">
+                <span class="chip"><i class="fas fa-child"></i> Children 6–15</span>
+                <span class="chip"><i class="fas fa-venus"></i> Females</span>
+                <span class="chip"><i class="fas fa-mars"></i> Males</span>
+                <span class="chip"><i class="fas fa-tree"></i> Rural/remote</span>
+              </div>
+            </div>
+          </li>
+          <li>
+            <span class="work-num">02</span>
+            <div>
+              <h3>Church &amp; community gatherings</h3>
+              <p>
+                We bring local churches together for shared services, community
+                events, and fellowship. We believe we're stronger when we stand
+                together.
+              </p>
+              <div class="chip-group">
+                <span class="chip"><i class="fas fa-users"></i> All ages</span>
+                <span class="chip"><i class="fas fa-church"></i> Christianity</span>
+              </div>
+            </div>
+          </li>
+          <li>
+            <span class="work-num">03</span>
+            <div>
+              <h3>Pastoral &amp; spiritual wellbeing</h3>
+              <p>
+                We support PSW programs that nurture the whole person—
+                body, mind, and spirit. Because wellbeing isn't just about
+                what's on the surface.
+              </p>
+              <div class="chip-group">
+                <span class="chip"><i class="fas fa-hand-holding-heart"></i> Pastoral care</span>
+                <span class="chip"><i class="fas fa-pray"></i> Spiritual support</span>
+              </div>
+            </div>
+          </li>
+          <li>
+            <span class="work-num">04</span>
+            <div>
+              <h3>Community connection</h3>
+              <p>
+                We organize events, services, and get-togethers to keep our
+                community connected—because nobody should have to go it alone.
+              </p>
+              <div class="chip-group">
+                <span class="chip"><i class="fas fa-heart"></i> Fellowship</span>
+                <span class="chip"><i class="fas fa-handshake"></i> Support</span>
+              </div>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ─── WHO WE SERVE ─── -->
+    <section id="people" class="block people">
+      <div class="wrap people-grid">
+        <div class="people-intro">
+          <h2>Who we're here for</h2>
+          <p>
+            We serve the people of Tumby Bay and the surrounding rural
+            communities of South Australia.
+          </p>
+        </div>
+
+        <ul class="people-list">
+          <li>
+            <strong>Children and young people</strong>
+            <span>Kids aged 6–15 in local schools who need a caring adult to talk to</span>
+          </li>
+          <li>
+            <strong>Families and parents</strong>
+            <span>Mums, dads, and caregivers who want support for their children</span>
+          </li>
+          <li>
+            <strong>Local churches</strong>
+            <span>Congregations working together to serve our community</span>
+          </li>
+          <li>
+            <strong>School communities</strong>
+            <span>Teachers, staff, and students who benefit from chaplaincy presence</span>
+          </li>
+          <li>
+            <strong>Rural and regional communities</strong>
+            <span>People in remote areas who often miss out on support services</span>
+          </li>
+          <li>
+            <strong>Anyone who needs a listening ear</strong>
+            <span>We're here for everyone—no matter who you are or where you come from</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ─── QUOTE ─── -->
+    <section class="quote-block">
+      <div class="wrap">
+        <blockquote>
+          <p>
+            “Community is built on small acts of kindness.
+            A listening ear. A warm meal. A hand to hold.”
+          </p>
+        </blockquote>
+        <p class="quote-attr">Tumby Bay Interchurch Council</p>
+      </div>
+    </section>
+
+    <!-- ─── DETAILS / AT A GLANCE ─── -->
+    <section class="block" style="background:var(--paper);">
+      <div class="wrap">
+        <header class="block-head">
+          <h2>Charity details</h2>
+          <p>Registered with the ACNC · Reporting up to date.</p>
+        </header>
+
+        <div class="details-grid">
+          <div class="detail-item">
+            <span class="label">ABN</span>
+            <span class="value">31 268 421 172</span>
+          </div>
+          <div class="detail-item">
+            <span class="label">Charity size</span>
+            <span class="value">Small</span>
+          </div>
+          <div class="detail-item">
+            <span class="label">Established</span>
+            <span class="value">31 December 1969</span>
+          </div>
+          <div class="detail-item">
+            <span class="label">Financial year end</span>
+            <span class="value">30 December</span>
+          </div>
+          <div class="detail-item">
+            <span class="label">Last reported</span>
+            <span class="value">27 March 2026</span>
+          </div>
+          <div class="detail-item">
+            <span class="label">Next report due</span>
+            <span class="value">30 June 2027</span>
+          </div>
+          <div class="detail-item" style="grid-column: 1 / -1; border-bottom: none; padding-top:0.2rem;">
+            <span class="label">Email</span>
+            <span class="value"><a href="mailto:emmy.hennell.tumby-bay@tuklasph.com">emmy.hennell.tumby-bay@tuklasph.com</a></span>
+          </div>
+        </div>
+
+        <div style="margin-top:1rem; display:flex; flex-wrap:wrap; gap:0.5rem 1rem; align-items:center;">
+          <span style="font-weight:500; color:var(--mute);"><i class="fas fa-users" style="color:var(--ember);"></i> Who we help:</span>
+          <span class="chip"><i class="fas fa-child"></i> Children 6–15</span>
+          <span class="chip"><i class="fas fa-venus"></i> Females</span>
+          <span class="chip"><i class="fas fa-mars"></i> Males</span>
+          <span class="chip"><i class="fas fa-tree"></i> Rural/regional/remote</span>
+        </div>
+
+        <div style="margin-top:1rem; background:var(--paper-2); padding:0.6rem 1.2rem; border-radius:0; border-left:4px solid var(--ember); font-size:0.95rem; color:var(--ink-2);">
+          <i class="fas fa-bullhorn" style="color:var(--ember); margin-right:0.4rem;"></i>
+          We promote local Christian churches in our district and support PSW in local schools.
+        </div>
+
+        <div style="margin-top:1rem; display:flex; flex-wrap:wrap; gap:0.5rem 1.5rem; font-size:0.9rem; color:var(--mute);">
+          <span><i class="fas fa-map-pin" style="color:var(--ember);"></i> Tumby Bay SA 5605, Australia</span>
+          <span><i class="fas fa-flag"></i> South Australia</span>
+          <span><i class="fas fa-globe"></i> Australia</span>
+          <span><i class="fas fa-tag"></i> Christianity</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── REACH US ─── -->
+    <section id="reach" class="block reach" style="border-bottom: none;">
+      <div class="wrap reach-grid">
+        <div>
+          <h2>Reach us</h2>
+          <p>
+            If you'd like to know more about our work, want to get involved,
+            or just need someone to talk to—we're here. Drop us a line.
+          </p>
+          <ul class="reach-points">
+            <li>Support for local schools and families</li>
+            <li>Partnerships with churches and community groups</li>
+            <li>Pastoral care and spiritual support</li>
+          </ul>
+        </div>
+
+        <div class="reach-card">
+          <p class="reach-label">Website</p>
+          <a class="reach-link" href="https://tumby-bay.tuklasph.com">tumby-bay.tuklasph.com</a>
+
+          <p class="reach-label">Email</p>
+          <a class="reach-link email" href="mailto:emmy.hennell.tumby-bay@tuklasph.com">emmy.hennell.tumby-bay@tuklasph.com</a>
+
+          <p class="reach-hint">
+            A short note is fine. Tell us who you are and what you need.
+            We reply with care and kindness.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ─── FOOTER ─── -->
+  <footer class="site-footer">
+    <div class="wrap footer-row">
+      <div>
+        <p class="footer-brand">Tumby Bay <span>Interchurch Council</span></p>
+        <p class="footer-tag">
+          Promoting local Christian churches and supporting pastoral wellbeing in schools since 1969.
+        </p>
+        <p class="footer-tag">Faith · Community · Care</p>
+      </div>
+      <p class="footer-copy">
+        &copy; <span id="year"></span> Tumby Bay Interchurch Council Inc · ABN 31 268 421 172
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // ── Mobile menu toggle ──
+    const menuBtn = document.querySelector('.menu-btn');
+    const nav = document.querySelector('.nav');
+
+    menuBtn.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('is-open');
+      menuBtn.setAttribute('aria-expanded', isOpen);
+      menuBtn.textContent = isOpen ? 'Close' : 'Menu';
+    });
+
+    // Close nav on link click (mobile)
+    nav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('is-open');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        menuBtn.textContent = 'Menu';
+      });
+    });
+
+    // ── Footer year ──
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
